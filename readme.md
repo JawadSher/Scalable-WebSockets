@@ -1,7 +1,6 @@
-Here is a professional and scan-friendly README.md file for your GitHub repository. It clearly explains how your system scales horizontally using Redis.
-------------------------------
-## Scalable Real-Time Chat Application
-A highly scalable real-time chat application built with Node.js WebSockets and a Redis Pub/Sub backend.
+# Scalable Real-Time Chat Application
+
+### A highly scalable real-time chat application built with Node.js WebSockets and a Redis Pub/Sub backend.
 Normally, if you run multiple instances of a WebSocket server, users connected to Server A cannot talk to users on Server B. This architecture solves that problem. By using Redis as a central message broker, all server instances stay synced. A message sent anywhere is safely broadcast to everyone everywhere.
 ------------------------------
 ## 🛠️ Tech Stack
