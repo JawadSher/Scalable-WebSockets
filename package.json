@@ -1,0 +1,26 @@
+{
+  "name": "websocket",
+  "version": "1.0.0",
+  "description": "Implement scalable websocket connection with redis pub/sub archeticture",
+  "keywords": [
+    "websocket",
+    "redis",
+    "realtime"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "Web-Sockets"
+  },
+  "license": "MIT",
+  "author": "jawadsher",
+  "type": "module",
+  "main": "./index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node ./index.js --watch"
+  },
+  "dependencies": {
+    "ioredis": "^5.11.1",
+    "ws": "^8.21.0"
+  }
+}

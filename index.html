@@ -1,0 +1,41 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <h1>Scalable WebSocket Connection</h1>
+
+    <div>
+        <input id="input-field"/>
+        <button id="submit-button">Send message</button>
+        <ul id="message-container"></ul>
+    </div>
+
+    <script>
+        const messageContainer = document.getElementById('message-container');
+        const button = document.getElementById("submit-button");
+        const input = document.getElementById("input-field");
+        const { port } = window.location;
+        const wsConnection = new WebSocket(`ws://localhost:${port}`);
+
+      wsConnection.onopen = () => {
+        button.addEventListener("click", () => {
+            wsConnection.send(input.value);
+        })
+      };
+
+      wsConnection.onmessage = (message) => {
+        const li = document.createElement("li");
+        li.innerText = message.data
+        messageContainer.appendChild(li);
+      }
+
+      wsConnection.onerror = (error) => {
+        console.error("WebSocket Error:", error);
+      };
+    </script>
+  </body>
+</html>
